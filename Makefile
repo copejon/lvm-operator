@@ -436,4 +436,5 @@ apply-kubesan-node-layering-image:
 # This recipe exists only for the LVMS + Kubesan demo
 deploy-kubesan: REF=v0.6.0
 deploy-kubesan: NS=openshift-storage
+deploy-kubesan:
 	./hack/deploy-kubesan.sh
