@@ -434,7 +434,8 @@ apply-kubesan-node-layering-image:
 	oc apply -f hack/kubesan.machineconfig.yaml
 
 # This recipe exists only for the LVMS + Kubesan demo
-deploy-kubesan: REF=v0.6.0
+deploy-kubesan: KUBESAN_IMAGE_REPO=quay.io/kubesan/kubesan
+deploy-kubesan: TAG=v0.7.0
 deploy-kubesan: NS=openshift-storage
 deploy-kubesan:
-	./hack/deploy-kubesan.sh
+	./hack/deploy-kubesan.sh -t $(TAG) -n $(NS) -i $(KUBESAN_IMAGE_REPO)
